@@ -12,7 +12,7 @@ class Solution:
                 return memo[key]
             
             results = []
-            for k in range(start, end):
+            for k in range(start + 1, end - 1):
                 char = expression[k]
                 if char in '+-*':
                     left_res = recurse(start, k)
