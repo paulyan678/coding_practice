@@ -4,28 +4,18 @@ class Solution:
         Do not return anything, modify matrix in-place instead.
         """
         m, n = len(matrix), len(matrix[0])
+        r, c = set(), set()
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == 0:
-                    matrix[i][j] = 1.1
+                    r.add(i)
+                    c.add(j)
         
-        for i in range(m):
-            for j in range(n):
-                if matrix[i][j] == 1.1:
-                    matrix[i][j] == 0
-
-                    for k in range(m):
-                        if matrix[k][j] == 1.1:
-                            continue
-                        matrix[k][j] = 0
-
-                    for k in range(n):
-                        if matrix[i][k] == 1.1:
-                            continue
-                        matrix[i][k] = 0
+        for j in c:
+            for i in range(m):
+                matrix[i][j] = 0
         
-        for i in range(m):
+        for i in r:
             for j in range(n):
-                if matrix[i][j] == 1.1:
-                    matrix[i][j] = 0
+                matrix[i][j] = 0
         
