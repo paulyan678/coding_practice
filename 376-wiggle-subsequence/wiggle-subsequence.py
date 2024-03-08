@@ -10,6 +10,6 @@ class Solution:
                     dp_p[i] = max(dp_p[i], 1 + dp_n[j])
                 elif nums[i] < nums[j]:
                     dp_n[i] = max(dp_n[i], 1 + dp_p[j])
-        return max(max(dp_p), max(dp_n))
+        return max(dp_p[-1], dp_n[-1])
 
         
