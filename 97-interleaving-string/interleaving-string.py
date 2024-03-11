@@ -3,7 +3,7 @@ class Solution:
         memo = {}
         
         def recurse(i, j, k):
-            key = (i, j, k)
+            key = (i, j)
             if key in memo:
                 return memo[key]
             if i == len(s1) and j == len(s2) and k == len(s3):
